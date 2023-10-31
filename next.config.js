@@ -10,7 +10,7 @@ module.exports = {
       serverActions: true,
     },
     env: {
-      serverUrl: 'https://netflixnode.onrender.com/',
+      serverUrl: 'https://netflixnode.onrender.com',
     },
     async headers() {
       return [
