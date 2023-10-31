@@ -10,7 +10,7 @@ module.exports = {
       serverActions: true,
     },
     env: {
-      serverUrl: 'http://localhost:3001',
+      serverUrl: 'https://netflixnode.onrender.com/',
     },
     async headers() {
       return [
