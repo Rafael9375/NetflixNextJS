@@ -88,7 +88,7 @@ export default function App() {
 
 
                     <div className="backdrop-opacity-50 p-20 bg-black/70 box-content rounded-md mx-auto h-96 w-80 decoration-white" >
-                        <p className="text-white mb-3 text-3xl font-medium" >Sign In {process.env.serverUrl} 123</p>
+                        <p className="text-white mb-3 text-3xl font-medium" >Sign In</p>
                         <div className="mb-4">
                             <InputField placeholder="Email" idName="login" onChange={(value) => { setLogin(value) }} errorMessage={errorMessageLogin} />
                         </div>
