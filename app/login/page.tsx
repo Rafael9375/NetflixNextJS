@@ -2,7 +2,7 @@
 
 import { getSession, signIn, signOut, useSession } from "next-auth/react"
 import { redirect, useRouter } from "next/navigation"
-import { useCallback, useLayoutEffect, useState } from "react"
+import { useCallback, useEffect, useLayoutEffect, useState } from "react"
 import bg from '../../public/images/loginForm/bgImage.jpg'
 import logo from '../../public/images/loginForm/netflix-icon.svg'
 
@@ -11,6 +11,7 @@ import GoogleButton from 'react-google-button'
 import InputField from "../components/loginForm/inputFiled"
 import HandleSignup from "../components/loginForm/handleSignup"
 import TestEnv from "../components/loginForm/testEnv"
+import InsertMovies from "../components/loginForm/movieInsert"
 
 type userData = {
     email: string
@@ -27,8 +28,11 @@ export default function App() {
 
     let session
     const rt = useRouter()
-    TestEnv()
+    
 
+    useLayoutEffect(() => {
+        InsertMovies()
+    }, [])
 
     const handleLogin = () => {
         console.log('asd')
