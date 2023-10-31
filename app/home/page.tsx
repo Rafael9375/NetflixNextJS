@@ -46,19 +46,23 @@ export default function App() {
 
     let dataSession = {} as Session | null
 
+    const handleRoute = () => {
+        route.replace('/login')
+    }
 
+    const loadLoginParameters = () => {
+        const log = getSession()
+            .then((res) => {
+                if (!res?.userDetails) {
+                    handleRoute()
 
-    const loadLoginParameters = async () => {
-        const log = await getSession()
-        if (!log?.userDetails) {
-            route.replace('/login')
-        }
-        setLoginParameters(log)
-        setUserId(log?.userDetails.id)
-        setUser(log?.userDetails)
-
-
-
+                }
+                else {
+                    setLoginParameters(res)
+                    setUserId(res?.userDetails.id)
+                    setUser(res?.userDetails)
+                }
+            })
     }
 
     useEffect(() => {
@@ -95,7 +99,7 @@ export default function App() {
         }
     }, [userId])
 
-    
+
 
     useEffect(() => {
         setModalMovie(randomMovie)
@@ -277,7 +281,7 @@ export default function App() {
 
                                     (
                                         movies as MovieInterface[]).map((movie) => (
-                                            <Card data={movie} isFavorite={isFavorite(movie.id)} setModalMovie={setModalMovie} setModal={setModal} setFavoritList={setFavoritList} favoritList={favoritList}></Card>
+                                            <Card key={movie.id} data={movie} isFavorite={isFavorite(movie.id)} setModalMovie={setModalMovie} setModal={setModal} setFavoritList={setFavoritList} favoritList={favoritList}></Card>
 
                                         ))
                                     :
@@ -300,7 +304,7 @@ export default function App() {
 
                                     (
                                         isFavorite(movie.id) ?
-                                            <Card data={movie} isFavorite={isFavorite(movie.id)} setModalMovie={setModalMovie} setModal={setModal} setFavoritList={setFavoritList} favoritList={favoritList}></Card>
+                                            <Card key={movie.id} data={movie} isFavorite={isFavorite(movie.id)} setModalMovie={setModalMovie} setModal={setModal} setFavoritList={setFavoritList} favoritList={favoritList}></Card>
                                             :
                                             <></>
 

@@ -10,7 +10,7 @@ import UseModal from "./components/browseHome/useModal"
 import { Session } from "inspector"
 
 
-export default async function Home(){ 
+export default function Home(){ 
     
     const router = useRouter()
     router.replace('/login')

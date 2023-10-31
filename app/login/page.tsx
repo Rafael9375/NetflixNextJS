@@ -29,6 +29,7 @@ export default function App() {
 
 
     const handleLogin = () => {
+        console.log('asd')
         let newUser = {} as userData
         newUser.email = login
         newUser.password = password
