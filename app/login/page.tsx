@@ -10,6 +10,7 @@ import Image from 'next/image'
 import GoogleButton from 'react-google-button'
 import InputField from "../components/loginForm/inputFiled"
 import HandleSignup from "../components/loginForm/handleSignup"
+import TestEnv from "../components/loginForm/testEnv"
 
 type userData = {
     email: string
@@ -26,6 +27,7 @@ export default function App() {
 
     let session
     const rt = useRouter()
+    TestEnv()
 
 
     const handleLogin = () => {
@@ -86,7 +88,7 @@ export default function App() {
 
 
                     <div className="backdrop-opacity-50 p-20 bg-black/70 box-content rounded-md mx-auto h-96 w-80 decoration-white" >
-                        <p className="text-white mb-3 text-3xl font-medium" >Sign In {process.env.SERVER_URL}123</p>
+                        <p className="text-white mb-3 text-3xl font-medium" >Sign In {process.env.serverUrl} 123</p>
                         <div className="mb-4">
                             <InputField placeholder="Email" idName="login" onChange={(value) => { setLogin(value) }} errorMessage={errorMessageLogin} />
                         </div>
