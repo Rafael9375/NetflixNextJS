@@ -1,7 +1,7 @@
 'use client'
 import { getSession, signIn, useSession } from "next-auth/react"
 import { redirect, useRouter } from "next/navigation"
-import { SyntheticEvent, useCallback, useState } from "react"
+import { SyntheticEvent, useCallback, useEffect, useState } from "react"
 import handleCookie from "./components/handleCookie"
 import NavBar from "./components/navBar"
 import LoginButton from "./components/logoffButton"
@@ -11,9 +11,12 @@ import { Session } from "inspector"
 
 
 export default function Home(){ 
-    
     const router = useRouter()
-    router.replace('/login')
+    useEffect(() => {
+        
+        router.replace('/login')
+    }, [])
+    
     return(
         <></>
     )
