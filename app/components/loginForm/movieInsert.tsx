@@ -5,6 +5,7 @@ export default function InsertMovies() {
         headers: { 'Content-Type': 'application/json' },
     }).then((res) => {
         res.json().then((data) => {
+            console.log('data.length', data.length)
             if (data.length == 0) {
                 
                 let newMovie = {

@@ -31,7 +31,7 @@ export default function App() {
     
 
     useLayoutEffect(() => {
-        InsertMovies()
+        //InsertMovies()
     }, [])
 
     const handleLogin = () => {
